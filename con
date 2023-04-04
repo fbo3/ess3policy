@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+import logging
+from dbus.mainloop.glib import DBusGMainLoop
+from gi.repository import GLib
+
+from controller import Controller
+
+def main():
+	logging.basicConfig(level=logging.WARNING)
+	DBusGMainLoop(set_as_default=True)
+	feedcontroller = Controller()
+	mainloop = GLib.MainLoop()
+	mainloop.run()
+
+if __name__ == "__main__":
+	 main()
